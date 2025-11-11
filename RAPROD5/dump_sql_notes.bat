@@ -1,0 +1,2 @@
+bcp "SELECT CAST([PATIENT_NUM] AS varchar(50)) AS PATIENT_NUM, CAST([ENCOUNTER_NUM] AS varchar(50)) AS ENCOUNTER_NUM, CONVERT(varchar(30), [START_DATE], 126) AS START_DATE, REPLACE(REPLACE(REPLACE(COALESCE(CONVERT(varchar(max), [OBSERVATION_BLOB]), ''), CHAR(13), ' '), CHAR(10), ' '), CHAR(124), '') AS OBSERVATION_BLOB FROM [RA_Prod5].[dbo].[observation_fact_notes] WITH (NOLOCK)" queryout "\\eristwofs.partners.org\VBIO-METHODSDEV\SHARE\RAPROD5\raw_data\notes\rapdrod5_obs_text_full.txt" -c -t "|" -r 0x0a  -a 16000 -T -S PHSQLRPDR322
+
