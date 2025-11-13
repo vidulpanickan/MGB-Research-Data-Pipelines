@@ -5,13 +5,13 @@ This folder contains small SLURM jobs for extracting notes for a given set of pa
 ## Files
 
 - `extract_from_nile_output.sbatch`  
-  Run this to extract **NILE-processed output** (post-NILE notes) for a specific set of patients.
+  Run this to extract **NILE-processed output**  for a specific set of patients.
 
 - `extract_biobank_notes.sbatch`  
-  Run this to extract **raw Biobank / RPDR notes** for a specific set of patients using `rpdr_note_extract.sh`.
+  Run this to extract **raw Biobank notes** for a specific set of patients using `rpdr_note_extract.sh`.
 
 - `rpdr_note_extract.sh`  
-  Bash script that does the actual extraction (called by the `.sbatch` jobs).
+  Bash script that does the actual extraction (called by the `.sbatch` jobs). This can be used seprately with rpdr style notes for extraction
 
 ## How to use
 
@@ -20,7 +20,7 @@ This folder contains small SLURM jobs for extracting notes for a given set of pa
    - `extract_from_nile_output.sbatch`  
    - `extract_biobank_notes.sbatch`  
    
-   and update the paths at the top (e.g. `ROOT_DIR`, `IDS_FILE`, `OUTPUT_DIR`, `KEYPOS`) to match your project.
+   and update the paths at the top (e.g. `ROOT_DIR` (Directory with input files), `IDS_FILE`(File containing patient IDs), `OUTPUT_DIR`(Output folder), `KEYPOS` (column in the input files where the patient ID is located)) to match your project.
 
 2. **Submit the job(s)** from your cluster login node:
    ```bash
